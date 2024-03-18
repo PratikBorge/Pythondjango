@@ -12,5 +12,5 @@ RUN  pip install django-markup[all_filter_dependencies]
 WORKDIR /opt/django-markup/
 RUN pip install pipenv
 RUN  pipenv install
-RUN  pytest
+RUN  pipenv install pytest --dev
 EXPOSE  8000  
