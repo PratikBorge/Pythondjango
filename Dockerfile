@@ -13,5 +13,6 @@ WORKDIR /opt/django-markup/
 RUN pip install pipenv
 RUN  pipenv install
 RUN  pipenv install pytest --dev
+RUN pipenv shell
 RUN pytest 
 EXPOSE  8000  
