@@ -10,8 +10,11 @@ RUN  git clone https://github.com/bartTC/django-markup.git
 RUN  pip install django-markup
 RUN  pip install django-markup[all_filter_dependencies]
 WORKDIR /opt/django-markup/
-RUN pip install pipenv
+RUN  pip install pipenv
 RUN  pipenv install
-RUN  pipenv install pytest --dev
+RUN  pipenv update
+RUN  pipenv clean
+RUN  pipenv install
+RUN  pipenv install pytest --dev --skip-lock
 RUN  pipenv run pytest
 EXPOSE  8000  
